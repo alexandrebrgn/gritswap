@@ -1,6 +1,6 @@
-# jeu_grille
+# GritSwap
 
-A new Flutter project.
+Jeu de rapidité : retourne les cases pour faire correspondre la grille au motif objectif avant la fin du temps.
 
 ## Getting Started
 

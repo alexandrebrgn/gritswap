@@ -1,0 +1,10 @@
+{
+  "artboards": [
+    { "file": "Home.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "Menu" },
+    { "file": "Main.dc.html", "x": 470, "y": 0, "w": 390, "h": 844, "title": "Jeu" },
+    { "file": "GameOver.dc.html", "x": 940, "y": 0, "w": 390, "h": 844, "title": "Fin de partie" },
+    { "file": "Shop.dc.html", "x": 1410, "y": 0, "w": 390, "h": 844, "title": "Boutique" },
+    { "file": "Settings.dc.html", "x": 1880, "y": 0, "w": 390, "h": 844, "title": "Paramètres" }
+  ],
+  "launch": { "view": "canvas" }
+}

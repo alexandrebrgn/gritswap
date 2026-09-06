@@ -1,4 +1,4 @@
-package com.alexandreb.jeugrille.jeu_grille
+package com.alexandreb.gritswap
 
 import io.flutter.embedding.android.FlutterActivity
 

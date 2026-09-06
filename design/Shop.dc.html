@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; }
+    a { color: #FFCF56; } a:hover { color: #FFE9AE; }
+    .step {
+      clip-path: polygon(6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,100% calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 6px),0 calc(100% - 6px),0 6px,6px 6px);
+    }
+    .step-sm {
+      clip-path: polygon(3px 0,calc(100% - 3px) 0,calc(100% - 3px) 3px,100% 3px,100% calc(100% - 3px),calc(100% - 3px) calc(100% - 3px),calc(100% - 3px) 100%,3px 100%,3px calc(100% - 3px),0 calc(100% - 3px),0 3px,3px 3px);
+    }
+  </style>
+</helmet>
+<div style="width:390px;height:844px;position:relative;overflow:hidden;background-color:#1B1A3B; background-image:repeating-conic-gradient(#1B1A3B 0% 25%, #201F44 0% 50%); background-size:8px 8px; font-family:'Silkscreen', monospace; display:flex; flex-direction:column; box-sizing:border-box; padding:26px 20px 28px;">
+
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="step" style="width:38px; height:38px; background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; display:flex; align-items:center; justify-content:center;">
+      <svg width="14" height="14" viewBox="0 0 5 5" shape-rendering="crispEdges">
+        <rect x="3" y="0" width="1" height="1" fill="#F4EFE6"/>
+        <rect x="2" y="1" width="2" height="1" fill="#F4EFE6"/>
+        <rect x="1" y="2" width="2" height="1" fill="#F4EFE6"/>
+        <rect x="2" y="3" width="2" height="1" fill="#F4EFE6"/>
+        <rect x="3" y="4" width="1" height="1" fill="#F4EFE6"/>
+      </svg>
+    </div>
+    <span style="font-family:'Press Start 2P', monospace; font-size:14px; color:#FFCF56;">BOUTIQUE</span>
+    <div class="step" style="display:flex; align-items:center; gap:6px; background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:7px 10px;">
+      <svg width="14" height="14" viewBox="0 0 6 6" shape-rendering="crispEdges">
+        <rect x="2" y="0" width="2" height="1" fill="#FFCF56"/>
+        <rect x="1" y="1" width="4" height="1" fill="#FFCF56"/>
+        <rect x="0" y="2" width="6" height="1" fill="#FFCF56"/>
+        <rect x="0" y="3" width="6" height="1" fill="#FFCF56"/>
+        <rect x="1" y="4" width="4" height="1" fill="#FFCF56"/>
+        <rect x="2" y="5" width="2" height="1" fill="#FFCF56"/>
+      </svg>
+      <span style="font-family:'Press Start 2P', monospace; font-size:9px; color:#FFCF56;">640</span>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:10px; margin-top:22px;">
+    <div class="step" style="flex:1; background:#FFCF56; box-shadow: inset 3px 3px 0 0 #FFE9AE, inset -3px -3px 0 0 #C99A34; padding:11px 0; text-align:center;">
+      <span style="font-family:'Press Start 2P', monospace; font-size:9px; color:#4A2E0A;">FACES</span>
+    </div>
+    <div class="step" style="flex:1; background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:11px 0; text-align:center;">
+      <span style="font-family:'Press Start 2P', monospace; font-size:9px; color:#8880B8;">FONDS</span>
+    </div>
+  </div>
+
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:12px; margin-top:20px;">
+
+    <div class="step" style="background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div style="display:grid; grid-template-columns:16px 16px; grid-template-rows:16px 16px; gap:3px;">
+        <div style="background:#FFCF56; border:2px solid #8C5A14;"></div>
+        <div style="background:#274B5E; border:2px solid #12262F;"></div>
+        <div style="background:#274B5E; border:2px solid #12262F;"></div>
+        <div style="background:#FFCF56; border:2px solid #8C5A14;"></div>
+      </div>
+      <span style="font-family:'Silkscreen', monospace; font-weight:700; font-size:12px; color:#F4EFE6;">CLASSIQUE</span>
+      <div class="step-sm" style="background:#1C1938; padding:5px 10px;">
+        <span style="font-family:'Press Start 2P', monospace; font-size:7px; color:#7CE3A0;">EQUIPE</span>
+      </div>
+    </div>
+
+    <div class="step" style="background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div style="display:grid; grid-template-columns:16px 16px; grid-template-rows:16px 16px; gap:3px;">
+        <div style="background:#FF8C6B; border:2px solid #A34C2E;"></div>
+        <div style="background:#4A2159; border:2px solid #250F2E;"></div>
+        <div style="background:#4A2159; border:2px solid #250F2E;"></div>
+        <div style="background:#FF8C6B; border:2px solid #A34C2E;"></div>
+      </div>
+      <span style="font-family:'Silkscreen', monospace; font-weight:700; font-size:12px; color:#F4EFE6;">CORAIL</span>
+      <div class="step-sm" style="display:flex; align-items:center; gap:5px; background:#1C1938; padding:5px 10px;">
+        <svg width="10" height="10" viewBox="0 0 6 6" shape-rendering="crispEdges">
+          <rect x="2" y="0" width="2" height="1" fill="#FFCF56"/>
+          <rect x="1" y="1" width="4" height="1" fill="#FFCF56"/>
+          <rect x="0" y="2" width="6" height="1" fill="#FFCF56"/>
+          <rect x="0" y="3" width="6" height="1" fill="#FFCF56"/>
+          <rect x="1" y="4" width="4" height="1" fill="#FFCF56"/>
+          <rect x="2" y="5" width="2" height="1" fill="#FFCF56"/>
+        </svg>
+        <span style="font-family:'Press Start 2P', monospace; font-size:7px; color:#FFCF56;">150</span>
+      </div>
+    </div>
+
+    <div class="step" style="background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div style="display:grid; grid-template-columns:16px 16px; grid-template-rows:16px 16px; gap:3px;">
+        <div style="background:#9BD65C; border:2px solid #567A2E;"></div>
+        <div style="background:#3B2A1A; border:2px solid #1E150C;"></div>
+        <div style="background:#3B2A1A; border:2px solid #1E150C;"></div>
+        <div style="background:#9BD65C; border:2px solid #567A2E;"></div>
+      </div>
+      <span style="font-family:'Silkscreen', monospace; font-weight:700; font-size:12px; color:#F4EFE6;">FORET</span>
+      <div class="step-sm" style="display:flex; align-items:center; gap:5px; background:#1C1938; padding:5px 10px;">
+        <svg width="10" height="10" viewBox="0 0 6 6" shape-rendering="crispEdges">
+          <rect x="2" y="0" width="2" height="1" fill="#FFCF56"/>
+          <rect x="1" y="1" width="4" height="1" fill="#FFCF56"/>
+          <rect x="0" y="2" width="6" height="1" fill="#FFCF56"/>
+          <rect x="0" y="3" width="6" height="1" fill="#FFCF56"/>
+          <rect x="1" y="4" width="4" height="1" fill="#FFCF56"/>
+          <rect x="2" y="5" width="2" height="1" fill="#FFCF56"/>
+        </svg>
+        <span style="font-family:'Press Start 2P', monospace; font-size:7px; color:#FFCF56;">150</span>
+      </div>
+    </div>
+
+    <div class="step" style="background:#2E2A5E; box-shadow: inset 3px 3px 0 0 #423C82, inset -3px -3px 0 0 #1C1938; padding:14px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <div style="display:grid; grid-template-columns:16px 16px; grid-template-rows:16px 16px; gap:3px;">
+        <div style="background:#FF3E9A; border:2px solid #A3155E;"></div>
+        <div style="background:#0E4A47; border:2px solid #062522;"></div>
+        <div style="background:#0E4A47; border:2px solid #062522;"></div>
+        <div style="background:#FF3E9A; border:2px solid #A3155E;"></div>
+      </div>
+      <span style="font-family:'Silkscreen', monospace; font-weight:700; font-size:12px; color:#F4EFE6;">NEON</span>
+      <div class="step-sm" style="display:flex; align-items:center; gap:5px; background:#1C1938; padding:5px 10px;">
+        <svg width="10" height="10" viewBox="0 0 6 6" shape-rendering="crispEdges">
+          <rect x="2" y="0" width="2" height="1" fill="#FFCF56"/>
+          <rect x="1" y="1" width="4" height="1" fill="#FFCF56"/>
+          <rect x="0" y="2" width="6" height="1" fill="#FFCF56"/>
+          <rect x="0" y="3" width="6" height="1" fill="#FFCF56"/>
+          <rect x="1" y="4" width="4" height="1" fill="#FFCF56"/>
+          <rect x="2" y="5" width="2" height="1" fill="#FFCF56"/>
+        </svg>
+        <span style="font-family:'Press Start 2P', monospace; font-size:7px; color:#FFCF56;">300</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

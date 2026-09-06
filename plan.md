@@ -1,4 +1,4 @@
-# Plan de préparation — Jeu de grille (nom à trouver)
+# Plan de préparation — GritSwap
 
 ## 1. Rappel du concept
 
