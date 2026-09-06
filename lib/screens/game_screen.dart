@@ -6,8 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../data/placeholder_patterns.dart';
 import '../game/game_session.dart';
 import '../game/puzzle_round.dart';
+import '../game/session_stats.dart';
 import '../theme/palette.dart';
 import '../widgets/flip_tile.dart';
+import '../widgets/target_preview.dart';
+import 'game_over_screen.dart';
 
 /// Écran de jeu statique : affiche la grille courante et la relie à
 /// [GameSession]. Pas d'animation pour l'instant (viendra plus tard) — le
@@ -39,7 +42,7 @@ class _GameScreenState extends State<GameScreen> {
   void _onTick(Timer timer) {
     if (_session.isGameOver) {
       timer.cancel();
-      setState(() {});
+      _goToGameOver();
       return;
     }
     setState(() => _session.tick(0.1));
@@ -64,6 +67,24 @@ class _GameScreenState extends State<GameScreen> {
           duration: const Duration(milliseconds: 700),
         ));
     }
+
+    if (_session.isGameOver) {
+      _ticker?.cancel();
+      _goToGameOver();
+    }
+  }
+
+  Future<void> _goToGameOver() async {
+    SessionStats.reportGameOver(_session.level);
+    final action = await Navigator.of(context).push<String>(
+      MaterialPageRoute(builder: (_) => GameOverScreen(levelReached: _session.level)),
+    );
+    if (!mounted) return;
+    if (action == 'menu') {
+      Navigator.of(context).pop();
+    } else {
+      setState(_startNewSession);
+    }
   }
 
   @override
@@ -85,7 +106,12 @@ class _GameScreenState extends State<GameScreen> {
           child: Column(
             children: [
               _Header(session: _session),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TargetPreview(target: round.target),
+              ),
+              const SizedBox(height: 16),
               Expanded(
                 child: Center(
                   child: AspectRatio(
@@ -119,12 +145,6 @@ class _GameScreenState extends State<GameScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              if (_session.isGameOver)
-                _GameOverBanner(
-                  session: _session,
-                  onRestart: () => setState(_startNewSession),
-                ),
             ],
           ),
         ),
@@ -166,48 +186,3 @@ class _Header extends StatelessWidget {
   }
 }
 
-class _GameOverBanner extends StatelessWidget {
-  final GameSession session;
-  final VoidCallback onRestart;
-
-  const _GameOverBanner({required this.session, required this.onRestart});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: Palette.panel,
-        border: Border.all(color: Palette.panelBorder, width: 3),
-      ),
-      child: Column(
-        children: [
-          Text(
-            'TEMPS ECOULE !',
-            style: GoogleFonts.pressStart2p(fontSize: 14, color: Palette.danger),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            'Niveau atteint : ${session.level}',
-            style: GoogleFonts.silkscreen(fontWeight: FontWeight.w700, fontSize: 14, color: Palette.cream),
-          ),
-          const SizedBox(height: 16),
-          GestureDetector(
-            onTap: onRestart,
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              width: double.infinity,
-              color: Palette.gold,
-              alignment: Alignment.center,
-              child: Text(
-                'REJOUER',
-                style: GoogleFonts.pressStart2p(fontSize: 12, color: const Color(0xFF4A2E0A)),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

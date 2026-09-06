@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'screens/game_screen.dart';
+import 'game/session_stats.dart';
+import 'screens/home_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SessionStats.init();
   runApp(const GritSwapApp());
 }
 
@@ -14,7 +17,7 @@ class GritSwapApp extends StatelessWidget {
     return const MaterialApp(
       title: 'GritSwap',
       debugShowCheckedModeBanner: false,
-      home: GameScreen(),
+      home: HomeScreen(),
     );
   }
 }
