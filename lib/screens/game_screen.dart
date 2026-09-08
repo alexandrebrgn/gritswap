@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../data/placeholder_patterns.dart';
 import '../game/game_session.dart';
+import '../game/pattern_source.dart';
 import '../game/puzzle_round.dart';
 import '../game/session_stats.dart';
 import '../theme/palette.dart';
@@ -34,7 +34,7 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   void _startNewSession() {
-    _session = GameSession(patternRepository: placeholderPatternRepository());
+    _session = GameSession(patternRepository: PatternSource.repository);
     _ticker?.cancel();
     _ticker = Timer.periodic(const Duration(milliseconds: 100), _onTick);
   }
