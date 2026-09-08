@@ -48,7 +48,7 @@ class ShopScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 12,
                     crossAxisSpacing: 12,
-                    childAspectRatio: 0.95,
+                    childAspectRatio: 0.8,
                   ),
                   itemCount: skins.length,
                   itemBuilder: (context, index) {
@@ -59,18 +59,34 @@ class ShopScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          GridView.count(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 3,
-                            crossAxisSpacing: 3,
-                            children: [
-                              Container(color: skin.face, margin: EdgeInsets.zero),
-                              Container(color: skin.pile),
-                              Container(color: skin.pile),
-                              Container(color: skin.face),
-                            ],
+                          // Taille fixe (au lieu d'une GridView imbriquée) pour
+                          // éviter tout overflow dans la carte.
+                          SizedBox(
+                            width: 56,
+                            height: 56,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Row(
+                                    children: [
+                                      Expanded(child: Container(color: skin.face)),
+                                      const SizedBox(width: 3),
+                                      Expanded(child: Container(color: skin.pile)),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(height: 3),
+                                Expanded(
+                                  child: Row(
+                                    children: [
+                                      Expanded(child: Container(color: skin.pile)),
+                                      const SizedBox(width: 3),
+                                      Expanded(child: Container(color: skin.face)),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           const SizedBox(height: 10),
                           Text(skin.name, style: GoogleFonts.silkscreen(fontWeight: FontWeight.w700, fontSize: 12, color: Palette.cream)),
