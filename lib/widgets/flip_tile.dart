@@ -11,6 +11,9 @@ import '../theme/palette.dart';
 /// Le décalage (stagger) par rapport à la case tapée est géré via [lastTap] :
 /// plus une case est loin de la case tapée, plus son animation démarre tard.
 class FlipTile extends StatefulWidget {
+  static const flipDuration = Duration(milliseconds: 260);
+  static const staggerStep = Duration(milliseconds: 45);
+
   final bool isFace;
   final int row;
   final int col;
@@ -31,9 +34,6 @@ class FlipTile extends StatefulWidget {
 }
 
 class _FlipTileState extends State<FlipTile> with SingleTickerProviderStateMixin {
-  static const _flipDuration = Duration(milliseconds: 260);
-  static const _staggerStep = Duration(milliseconds: 45);
-
   late final AnimationController _controller;
   late bool _displayedIsFace;
 
@@ -41,7 +41,7 @@ class _FlipTileState extends State<FlipTile> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     _displayedIsFace = widget.isFace;
-    _controller = AnimationController(vsync: this, duration: _flipDuration)
+    _controller = AnimationController(vsync: this, duration: FlipTile.flipDuration)
       ..addListener(_onTick);
   }
 
@@ -71,7 +71,7 @@ class _FlipTileState extends State<FlipTile> with SingleTickerProviderStateMixin
     final tap = widget.lastTap;
     if (tap == null) return Duration.zero;
     final distance = math.max((widget.row - tap.$1).abs(), (widget.col - tap.$2).abs());
-    return _staggerStep * distance;
+    return FlipTile.staggerStep * distance;
   }
 
   @override
